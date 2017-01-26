@@ -1,6 +1,11 @@
 import sys
-import discogs_client as discogs
 import time
+
+try:
+	import discogs_client as discogs
+except:
+	print("[ERROR] discogs_client isn't installed. Run: pip install discogs_client");
+	exit(0)
 
 if (len(sys.argv) != 2):
 	print "Usage: discogs-compilation-info.py release-id";
